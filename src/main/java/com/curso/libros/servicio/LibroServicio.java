@@ -3,9 +3,10 @@ package com.curso.libros.servicio;
 import com.curso.libros.modelo.Libro;
 import com.curso.libros.repositorio.LibroRepositorio;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+@Service
 public class LibroServicio implements ILibroServicio{
     @Autowired
     private LibroRepositorio libroRepositorio;
@@ -17,6 +18,7 @@ public class LibroServicio implements ILibroServicio{
     @Override
     public Libro buscarLibroPorId(Integer idLibro) {
         Libro libro = libroRepositorio.findById(idLibro).orElse(null);
+        return libro;
     }
 
     @Override
