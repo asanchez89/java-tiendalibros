@@ -162,6 +162,7 @@ public class LibroForm extends JFrame {
         String[] cabeceras = {"Id", "Libro", "Autor", "Precio", "Existencias"};
         this.tablaModeloLibros.setColumnIdentifiers(cabeceras);
         this.tablaLibros = new JTable(tablaModeloLibros);
+        this.tablaLibros.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         listarLibros();
     }
 
